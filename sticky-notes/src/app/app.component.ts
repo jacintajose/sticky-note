@@ -14,8 +14,8 @@ export class AppComponent {
   Blog: Object;
   constructor(private _stikyservice: StickyService) {
     this.getTutorialLists();
-    this.getprojects();
-    this. getBlog();
+    // this.getprojects();
+    // this. getBlog();
 
   }
 
@@ -24,21 +24,22 @@ export class AppComponent {
     .subscribe( data => {
       console.log(data);
       this.Data = data;
+      console.log(this.Data);
     });
   }
-  getprojects() {
-    this._stikyservice.getProject()
-    .subscribe( project => {
-      console.log(project);
-      this.Project = project;
-    });
-  }
+  // getprojects() {
+  //   this._stikyservice.getProject()
+  //   .subscribe( project => {
+  //     console.log(project);
+  //     this.Project = project;
+  //   });
+  // }
 
-  getBlog() {
-    this._stikyservice.getBlog()
-    .subscribe( blog => {
-      console.log(blog);
-      this.Blog = blog;
-    });
-  }
+  // getBlog() {
+  //   this._stikyservice.getBlog()
+  //   .subscribe( blog => {
+  //     console.log(blog);
+  //     this.Blog = blog;
+  //   });
+  // }
 }
