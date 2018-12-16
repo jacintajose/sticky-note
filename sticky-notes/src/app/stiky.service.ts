@@ -4,7 +4,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class StickyService {
   $baseUrl = 'https://buildfromzero.com';
 
   constructor(private http: HttpClient) { }

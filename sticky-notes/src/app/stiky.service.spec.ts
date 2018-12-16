@@ -1,20 +1,14 @@
-
-
-
-
-
 import { TestBed, inject } from '@angular/core/testing';
 
-import { StikyService } from './stiky.service';
-
+import { StickyService } from './stiky.service';
 describe('DataService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [StikyService]
+      providers: [StickyService]
     });
   });
 
-  it('should be created', inject([StikyService], (service: StikyService) => {
+  it('should be created', inject([StickyService], (service: StickyService) => {
     expect(service).toBeTruthy();
   }));
 });

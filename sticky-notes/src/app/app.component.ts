@@ -1,6 +1,6 @@
 
 import { Component } from '@angular/core';
-import { StikyService } from './stiky.service.';
+import { StickyService } from './stiky.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,7 @@ export class AppComponent {
   Data: Object;
   Project: Object;
   Blog: Object;
-  constructor(private _dataService: DataService) {
+  constructor(private _stikyservice: StickyService) {
     this.getTutorialLists();
     this.getprojects();
     this. getBlog();
@@ -20,14 +20,14 @@ export class AppComponent {
   }
 
   getTutorialLists() {
-    this._dataService.getData()
+    this._stikyservice.getData()
     .subscribe( data => {
       console.log(data);
       this.Data = data;
     });
   }
   getprojects() {
-    this._dataService.getProject()
+    this._stikyservice.getProject()
     .subscribe( project => {
       console.log(project);
       this.Project = project;
@@ -35,7 +35,7 @@ export class AppComponent {
   }
 
   getBlog() {
-    this._dataService.getBlog()
+    this._stikyservice.getBlog()
     .subscribe( blog => {
       console.log(blog);
       this.Blog = blog;
