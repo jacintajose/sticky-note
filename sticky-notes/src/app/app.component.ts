@@ -9,7 +9,7 @@ import { StickyService } from './stiky.service';
 })
 export class AppComponent {
   title = 'sticky-notes';
-  tutorials: Object;
+  tutorials: any;
   Project: Object;
   Blog: Object;
   constructor(private _stikyservice: StickyService) {
