@@ -1,60 +1,21 @@
+
+<ol>
+    <li><a href="step1.html"><strong>Tutorials</strong></a></li>
+    <li><a href="step2.html"><strong>Projects</strong></a></li>
+    <li><a href="step3.html"><strong>Blog</strong></a></li>
+    <li><a href="step4.html"><strong>Accounts</strong></a></li>
+  </ol>
 <!--The content below is only a placeholder and can be replaced.-->
 
 <ul>
-  <li>
+
+  <li *ngFor="let item of tutorials.results">
     <a href="#">
-      <h2>tom</h2>
-      <p>Text Content #1</p>
+      <h3>{{item.title}}</h3>
+      <p>{{item.writer}}</p>
     </a>
   </li>
-  <li>
-    <a href="#">
-      <h2>Title #2</h2>
-      <p>Text Content #2</p>
-    </a>
-  </li>
-  <li>
-    <a href="#">
-      <h2>Title #3</h2>
-      <p>Text Content #3</p>
-    </a>
-  </li>
-  <li>
-    <a href="#">
-      <h2>Title #4</h2>
-      <p>Text Content #4</p>
-    </a>
-  </li>
-  <li>
-    <a href="#">
-      <h2>Title #5</h2>
-      <p>Text Content #5</p>
-    </a>
-  </li>
-  <li>
-    <a href="#">
-      <h2>Title #6</h2>
-      <p>Text Content #6</p>
-    </a>
-  </li>
-  <li>
-    <a href="#">
-      <h2>Title #2</h2>
-      <p>Text Content #2</p>
-    </a>
-  </li>
-  <li>
-    <a href="#">
-      <h2>Title #7</h2>
-      <p>Text Content #7</p>
-    </a>
-  </li>
-  <li>
-    <a href="#">
-      <h2>Title #8</h2>
-      <p>Text Content #8</p>
-    </a>
-  </li>
+
 </ul>
 
 

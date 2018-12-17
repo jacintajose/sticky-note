@@ -9,7 +9,7 @@ import { StickyService } from './stiky.service';
 })
 export class AppComponent {
   title = 'sticky-notes';
-  Data: Object;
+  tutorials: Object;
   Project: Object;
   Blog: Object;
   constructor(private _stikyservice: StickyService) {
@@ -23,8 +23,8 @@ export class AppComponent {
     this._stikyservice.getData()
     .subscribe( data => {
       console.log(data);
-      this.Data = data;
-      console.log(this.Data);
+      this.tutorials = data;
+      console.log(this.tutorials);
     });
   }
   // getprojects() {
