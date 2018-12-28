@@ -1,23 +1,17 @@
 
-<ol>
-    <li><a href="step1.html"><strong>Tutorials</strong></a></li>
-    <li><a href="step2.html"><strong>Projects</strong></a></li>
-    <li><a href="step3.html"><strong>Blog</strong></a></li>
-    <li><a href="step4.html"><strong>Accounts</strong></a></li>
-  </ol>
+    <div style="text-align:center">
+      <h1>
+    Sticky notes
+      </h1>
+      <button [routerLink]="['/stiky']" class="btn btn-primary">Home</button> &nbsp;
+      <button [routerLink]="['/new']" class="btn btn-primary">New</button>
+    </div>
+
+    <router-outlet></router-outlet>
+
 <!--The content below is only a placeholder and can be replaced.-->
 
-<ul>
-
-  <li *ngFor="let item of tutorials?.results">
-    <a href="#">
-      <h3>{{item.title}}</h3>
-      <p>{{item.writer}}</p>
-    </a>
-  </li>
-
-</ul>
-
+ 
 
 
 <!-- <router-outlet></router-outlet> -->
