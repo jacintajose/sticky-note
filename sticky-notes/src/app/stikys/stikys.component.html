@@ -1,12 +1,10 @@
-<p>
-  stikys works!
-</p>
+
   <ul>
 
-    <li *ngFor="let item of tutorials?.results">
+    <li *ngFor="let item of tutorials">
       <a href="#">
+        <h3>#{{item.id}}</h3>
         <h3>{{item.title}}</h3>
-        <p>{{item.writer}}</p>
       </a>
     </li>
   

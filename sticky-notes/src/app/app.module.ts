@@ -7,12 +7,14 @@ import { StickyService } from './stiky.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NewComponent } from './new/new.component';
 import { StikysComponent } from './stikys/stikys.component';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewComponent,
-    StikysComponent
+    StikysComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

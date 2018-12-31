@@ -6,12 +6,12 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class StickyService {
-  $baseUrl = 'https://buildfromzero.com';
+  $baseUrl = 'http://jessie.buildfromzero.com';
 
   constructor(private http: HttpClient) { }
 
   getData() {
-    return this.http.get(this.$baseUrl + '/tutorials/api/?format=json', this.Options());
+    return this.http.get(this.$baseUrl + '/api/post-list-create/?format=json', this.Options());
   }
 getProject()
 {
