@@ -9,18 +9,12 @@ import { StickyService } from '../stiky.service';
 })
 export class NewComponent {
   model = new Hero('','');
-
   submitted = false;
-  server_response : Object
-
-
+  
   constructor(private _stikyservice: StickyService) {
     this.createNewPost();
-    // this.getprojects();
-    // this. getBlog();
 
   }
-  
 
   onSubmit() {
      this.submitted = true;
@@ -39,9 +33,8 @@ export class NewComponent {
   createNewPost() {
     this._stikyservice.createPostService(this.model.title,this.model.content)
     .subscribe( data => {
-      console.log(data);
-      this.server_response = data;
-      console.log(this.server_response);
+      console.log(data.id);
+      var detail_url = "/details/"+data.id 
     });
   }
 
