@@ -9,7 +9,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/stiky',pathMatch:'full'},
   {path: 'stiky', component: StikysComponent},
   {path: 'new', component: NewComponent},
-  {path: 'details', component: DetailComponent},
+  {path: 'details/:id', component: DetailComponent},
 
 
 

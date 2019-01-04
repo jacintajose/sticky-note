@@ -13,23 +13,27 @@ export class StickyService {
   getData() {
     return this.http.get(this.$baseUrl + '/api/post-list-create/?format=json', this.Options());
   }
-getProject()
-{
-  return this.http.get(this.$baseUrl + '/projects/api/?format=json', this.Options());
 
-}
+  // getProject() {
+  //   return this.http.get(this.$baseUrl + '/projects/api/?format=json', this.Options());
 
-getBlog()
-{
-  return this.http.get(this.$baseUrl + '/blog/api/?format=json', this.Options());
+  // }
 
-}
+  // getBlog() {
+  //   return this.http.get(this.$baseUrl + '/blog/api/?format=json', this.Options());
+
+  // }
+
+  getNoteDetail(id) {
+    return this.http.get(this.$baseUrl + '/api/post-detail/' + id , this.Options());
+
+  }
   // httpOptions
   Options() {
     const httpOptions = {
       headers: new HttpHeaders({
         'Accept': 'application/json',
-              'Content-Type' : 'application/json'
+        'Content-Type': 'application/json'
       })
     };
     return httpOptions;
