@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero }    from '../hero';
 import { StickyService } from '../stiky.service';
+import { RouterModule, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-new',
