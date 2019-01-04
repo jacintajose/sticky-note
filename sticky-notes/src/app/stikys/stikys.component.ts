@@ -28,6 +28,8 @@ export class StikysComponent{
       console.log(this.tutorials);
     });
   }
+
+  
   // getprojects() {
   //   this._stikyservice.getProject()
   //   .subscribe( project => {

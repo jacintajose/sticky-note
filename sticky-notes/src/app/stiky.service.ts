@@ -14,10 +14,22 @@ export class StickyService {
     return this.http.get(this.$baseUrl + '/api/post-list-create/?format=json', this.Options());
   }
 
-  // getProject() {
-  //   return this.http.get(this.$baseUrl + '/projects/api/?format=json', this.Options());
+  
 
-  // }
+  createPostService(title,content) {
+    console.log("creating new post..")
+    console.log(title);
+    var my_request = {
+      "title" : title,
+      "content" : content
+    }
+
+    console.log(my_request);
+    return this.http.post(this.$baseUrl + '/api/post-list-create/?format=json',
+    my_request
+    ,this.Options());
+
+  }
 
   // getBlog() {
   //   return this.http.get(this.$baseUrl + '/blog/api/?format=json', this.Options());
