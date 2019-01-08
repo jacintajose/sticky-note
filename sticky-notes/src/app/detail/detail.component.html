@@ -1,15 +1,51 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 offset-2">
+
+      <div [hidden]="formFlag">
+          <h1>#{{Details.id}}
+              <a (click)="onEditClick()"><button type="button" class="btn btn-default">Edit</button></a>
+              
+              <a (click)="onDeleteClick()"><button type="button" class="btn btn-default">Delete</button></a>
+              <!-- <a [routerLink]="['/new/']" >Delete</a> -->
+
+            </h1>
+            <p>{{Details.title}}</p>
+            <p>{{Details.content}}</p>
+            <p>{{Details.timestamp}}</p>
+            <p>{{Details.last_updated}}</p>
+       </div>
+
+       <div [hidden]="!formFlag">
+
+          <p><a href="/details/{{Details.id}}">Back</a></p>
+          <h1>#{{Details.title}}</h1>
+          <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+              <div class="form-group">
+                 <label for="title">Title</label>
+                 <input type="text" class="form-control" id="title"
+                 required
+                 [(ngModel)]="model.title" name="title"
+                 #title="ngModel" placeholder="My Awesome Post" value="{{Details.title}}" >
+                 <div [hidden]="title.valid || title.pristine"
+                    class="alert alert-danger">
+                    title is required
+                 </div>
+              </div>
+              <div class="form-group">
+                 <label for="content">Content</label>
+                 <textarea type="text" class="form-control" id="content" required placeholder="Content"  value="{{Details.content}}" 
+                 [(ngModel)]="model.content" name="content"></textarea>
+              </div>
+              <!-- <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
+              <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Update</button>
+              <!-- <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Hero</button> -->
+              </form>
+
+          <!-- your form starts here -->
+              
+       </div>
       
-      <h1>#{{Details.id}}</h1>
-      <p>{{Details.title}}</p>
-      <p>{{Details.content}}</p>
-      <p>{{Details.timestamp}}</p>
-      <p>{{Details.last_updated}}</p>
-
-
-
     </div>
 
   </div>

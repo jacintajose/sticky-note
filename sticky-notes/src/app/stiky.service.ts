@@ -23,6 +23,20 @@ export class StickyService {
 
   }
 
+  updatePostService(title,content,id) {
+    var my_request = {
+      "title" : title,
+      "content" : content
+    }
+    return this.http.put(this.$baseUrl + '/api/post-detail/'+id+'/?format=json',my_request,this.Options());
+
+  }
+
+  deleteService(title,content,id) {
+  
+    return this.http.delete(this.$baseUrl + '/api/post-detail/'+id+'/?format=json',this.Options());
+
+  }
   // getBlog() {
   //   return this.http.get(this.$baseUrl + '/blog/api/?format=json', this.Options());
 

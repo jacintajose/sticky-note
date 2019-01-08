@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero }    from '../hero';
 import { StickyService } from '../stiky.service';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, Router } from '@angular/router';
 
 @Component({
   selector: 'app-new',
@@ -11,11 +11,14 @@ import { RouterModule, Routes } from '@angular/router';
 export class NewComponent {
   model = new Hero('','');
   submitted = false;
+  server_response : any;
   
-  constructor(private _stikyservice: StickyService) {
-    this.createNewPost();
+  constructor(private _stikyservice: StickyService, public router: Router) {
+    // this.createNewPost();
 
   }
+
+  
 
   onSubmit() {
      this.submitted = true;
@@ -34,9 +37,19 @@ export class NewComponent {
   createNewPost() {
     this._stikyservice.createPostService(this.model.title,this.model.content)
     .subscribe( data => {
-      console.log(data.id);
-      var detail_url = "/details/"+data.id 
+      this.server_response = data ;
+      console.log(data);
+      console.log("data posted sucessfully");
+      var detail_url = "/details/"+ this.server_response.id ;
+      console.log(detail_url);
+      this.route_to_detail_page();
     });
+  }
+
+  route_to_detail_page(){
+    if(this.server_response){
+      this.router.navigateByUrl('/details/' + this.server_response.id);
+    }
   }
 
 }
