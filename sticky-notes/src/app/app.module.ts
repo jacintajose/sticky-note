@@ -10,19 +10,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { NewComponent } from './new/new.component';
 import { StikysComponent } from './stikys/stikys.component';
 import { DetailComponent } from './detail/detail.component';
+import { AuthComponent } from './auth/auth.component';
+import { AuthModule } from './auth/auth/auth.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewComponent,
     StikysComponent,
-    DetailComponent
+    DetailComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AuthModule
   ],
   providers: [StickyService],
   bootstrap: [AppComponent]
