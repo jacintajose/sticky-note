@@ -12,35 +12,43 @@
           <a [routerLink]="['/register']" *ngIf="authType == 'login'">Need an account?</a>
         </p>
 
-        <form [formGroup]="authForm" (ngSubmit)="submitForm()">
+
+        
+
+        <form (ngSubmit)="submitForm()">
           <fieldset [disabled]="isSubmitting">
             <fieldset class="form-group">
               <input
-                formControlName="username"
                 placeholder="Username"
                 class="form-control form-control-lg"
-                type="text"
+                type="text" [(ngModel)]="model.username" name="username"
+                     #title="ngModel"
                 *ngIf="authType == 'register'" />
             </fieldset>
             <fieldset class="form-group">
               <input
-                formControlName="email"
                 placeholder="Email"
-                class="form-control form-control-lg"
-                type="text" />
+                class="form-control form-control-lg"  [(ngModel)]="model.email" name="email"
+                     #email="ngModel"
+                type="email" />
             </fieldset>
             <fieldset class="form-group">
               <input
-                formControlName="password"
                 placeholder="Password"
-                class="form-control form-control-lg"
+                class="form-control form-control-lg" [(ngModel)]="model.password" name="password"
+                     #password="ngModel"
                 type="password" />
             </fieldset>
-            <button class="btn btn-lg btn-primary pull-xs-right" type="submit">
+            <button (click)="onclickk()" class="btn btn-lg btn-primary pull-xs-right" type="submit">
               {{ title }}
             </button>
-          </fieldset>
+          </fieldset> 
+
         </form>
+<h3 *ngIf="success" class="text-success">login successful </h3>
+<h3 *ngIf="failed" class="text-danger">login unsuccessful </h3>
+
+
       </div>
 
     </div>

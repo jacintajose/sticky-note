@@ -14,16 +14,23 @@ export class AuthComponent implements OnInit {
   title: String = '';
   isSubmitting: boolean = false;
   authForm: FormGroup;
+  model: any = {
+    username: ''
+  };
+  testUsername = 'info@technorip.com';
+  testPassword = '11223344';
+  success: boolean;
+    failed: boolean;
+
 
   constructor(
-    private route: ActivatedRoute,
-    private fb: FormBuilder
+    private route: ActivatedRoute
   ) {
     // use FormBuilder to create a form group
-    this.authForm = this.fb.group({
-      'email': ['', Validators.required],
-      'password': ['', Validators.required]
-    });
+    // this.authForm = this.fb.group({
+    //   'email': ['', Validators.required],
+    //   'password': ['', Validators.required]
+    // });
   }
 
   ngOnInit() {
@@ -34,16 +41,30 @@ export class AuthComponent implements OnInit {
       this.title = (this.authType === 'login') ? 'Sign In' : 'Sign Up';
       // add form control for username if this is the register page
       if (this.authType === 'register') {
-        this.authForm.addControl('username', new FormControl('', Validators.required));
+        // this.authForm.addControl('username', new FormControl('', Validators.required));
       }
     });
   }
 
   submitForm() {
-    this.isSubmitting = true;
-
-    let credentials = this.authForm.value;
+   // this.isSubmitting = true;
+ this.success=false;
+  this.failed=false;
+    // let credentials = this.authForm.value;
     // check out what you get!
-    console.log(credentials);
+    console.log(this.model);
+    console.log(this.testUsername);
+    console.log(this.testPassword);
+    if(this.model.email==this.testUsername && this.model.password==this.testPassword){
+      console.log("login successful");
+      this.success=true;
+    } else {
+      console.log("login unsuccessful")
+      this.failed=true;
+
+    }
+  }
+  onclickk(){
+   console.log();
   }
 }
