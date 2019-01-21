@@ -46,7 +46,22 @@ export class StickyService {
     return this.http.get(this.$baseUrl + '/api/post-detail/' + id , this.Options());
 
   }
+
+  login(model){
+console.log(model)
+  let params= {
+    email: model.email,
+    password:model.password
+  }
+  
+  return this.http.post(this.$baseUrl + '/api/login/',params,this.Options());
+  }
   // httpOptions
+
+  getProtectedData1() {
+    return this.http.get(this.$baseUrl + '/api/protected-data/', this.Options1());
+  }
+
   Options() {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -56,6 +71,18 @@ export class StickyService {
     };
     return httpOptions;
   }
-
+  Options1() {
+    let key = localStorage.getItem('currentUser');
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'JWT ' + key
+      })
+    };
+    return httpOptions;
+    }
 }
+
+
 

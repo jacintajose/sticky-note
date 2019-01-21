@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { StickyService } from '../stiky.service';
 
 @Component({
   selector: 'app-auth',
@@ -24,7 +25,7 @@ export class AuthComponent implements OnInit {
 
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute, public stickyservice: StickyService
   ) {
     // use FormBuilder to create a form group
     // this.authForm = this.fb.group({
@@ -50,11 +51,22 @@ export class AuthComponent implements OnInit {
    // this.isSubmitting = true;
  this.success=false;
   this.failed=false;
+  this.stickyservice.login(this.model)
+  .subscribe( (res: any) => {
+    console.log(res);
+    if(res.authKey) {
+      localStorage.setItem("currentUser", res.authKey);
+    } else {
+      console.log('Error!');
+    }
+    
+  })
+
     // let credentials = this.authForm.value;
     // check out what you get!
-    console.log(this.model);
-    console.log(this.testUsername);
-    console.log(this.testPassword);
+    // console.log(this.model);
+    // console.log(this.testUsername);
+    // console.log(this.testPassword);
     if(this.model.email==this.testUsername && this.model.password==this.testPassword){
       console.log("login successful");
       this.success=true;

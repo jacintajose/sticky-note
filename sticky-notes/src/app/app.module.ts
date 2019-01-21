@@ -11,6 +11,7 @@ import { NewComponent } from './new/new.component';
 import { StikysComponent } from './stikys/stikys.component';
 import { DetailComponent } from './detail/detail.component';
 import { AuthComponent } from './auth/auth.component';
+import { TestComponent } from './test/test.component';
 // import { AuthModule } from './auth/auth/auth.module';
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AuthComponent } from './auth/auth.component';
     NewComponent,
     StikysComponent,
     DetailComponent,
-    AuthComponent
+    AuthComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

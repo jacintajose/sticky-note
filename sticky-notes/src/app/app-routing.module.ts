@@ -5,6 +5,7 @@ import { NewComponent } from './new/new.component';
 import { StikysComponent } from './stikys/stikys.component';
 import { DetailComponent } from './detail/detail.component';
 import { AuthComponent } from './auth/auth.component';
+import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/stiky',pathMatch:'full'},
@@ -13,6 +14,8 @@ const routes: Routes = [
   {path: 'details/:id', component: DetailComponent},
   {path: 'login', component: AuthComponent},
   {path: 'register', component: AuthComponent},
+  {path: 'test', component: TestComponent},
+
 
 
 
